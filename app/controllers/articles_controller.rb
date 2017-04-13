@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
+  
   def index
 	@articles = Article.all
   end
@@ -20,7 +21,7 @@ class ArticlesController < ApplicationController
 
   	flash.notice = "Article '#{@article.title}' was Created!"
 
-  	redirect_to article_path(@article)
+  	redirect_to @article
   end
 
   def edit
